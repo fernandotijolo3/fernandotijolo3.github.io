@@ -1,22 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tijolo</title>
-</head>
-    <body>
-        <h1>Fernando/Tijolo</h1>
-        <p><strong>Nome:</strong>
-        Fernando</p>
-        <hr>
-        <strong>Escola anterior:</strong> <br>
-        <a href="https://www.escol.as/205108-matheus-maylasky-em">Matheus Maylasky</a><br>
-        <hr>
-        <p><strong>Motivação:</strong>
-        Propaganda do 2º ano</p>
-        <hr>
-        <strong>Hobby:</strong>
-        <a href="https://www.ubisoft.com/pt-br/game/rainbow-six/siege">Siege</a>
-    </body>
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Google do tijolo</title>
+    <style>
+      body {
+        background: #FFFFFF;
+        margin: 0;
+      }
+
+      #backgroundImage {
+        border: none;
+        height: 100%;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+      }
+
+      [show-background-image] #backgroundImage {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="backgroundImage" src=""></iframe>
+    <ntp-app></ntp-app>
+    <script type="module" src="new_tab_page.js"></script>
+    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
+    <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome">
+    <link rel="stylesheet" href="shared_vars.css">
+  </body>
 </html>
