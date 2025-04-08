@@ -3,26 +3,61 @@
   <head>
     <title>links internos</title>
     <meta charset="utf-8">
+    <style>
+      /* Estilos corrigidos */
+      body {
+          display: flex;
+          flex-direction: row;
+      }
+
+      #sidebar {
+          width: 200px;
+          padding: 20px;
+          background-color: #f4f4f4;
+          color: #333;
+      }
+
+      #sidebar a {
+          text-decoration: none;
+          color: #007BFF;
+      }
+
+      #sidebar a:hover {
+          text-decoration: underline;
+      }
+
+      #conteudo_da_pagina {
+          flex-grow: 1;
+          padding: 20px;
+      }
+
+      hr {
+          border: 1px solid #ccc;
+          margin: 20px 0;
+      }
+
+      h1, h2, p {
+          margin-bottom: 15px;
+      }
+    </style>
   </head>
   <body>
 
-	 <aside id="sidebar">
-        <h2> </h2>
+    <aside id="sidebar">
+        <h2></h2>
         <ul>
             <li><a href="#inteligencia_artificial">1 - Inteligência Artificial</a></li>
-			<li><a href="#IA1.1"> 1.1 - criação</a></li>
+            <li><a href="#IA1.1">1.1 - Criação</a></li>
             <li><a href="#Bootstrap">2 - Bootstrap</a></li>
-			<li><a href="#criadores">2.1 - Mark Otto</a></li>
-			<li><a href= "#criadores">2.2 - Jacob Thornton</a></li>
-			<li><a href="#Dot_Net">3 - Dot net(.NET)</a></li>
-			<li><a href="#Historia">3.1 - Historia .NET</a></li>
-		    <li><a href="#Integrantes">4 - Nós</a></li>
-			<li><a href="#Tijolo">4.1 - Fernando Tavares</a></li>
-			<li><a href="#paraphuso">4.2 - Pedro Souza</a></li>
-			
-			
+            <li><a href="#mark_otto">2.1 - Mark Otto</a></li>
+            <li><a href="#jacob_thornton">2.2 - Jacob Thornton</a></li>
+            <li><a href="#Dot_Net">3 - Dot net(.NET)</a></li>
+            <li><a href="#Historia">3.1 - História .NET</a></li>
+            <li><a href="#Integrantes">4 - Nós</a></li>
+            <li><a href="#tijolo">4.1 - Fernando Tavares</a></li>
+            <li><a href="#paraphuso">4.2 - Pedro Souza</a></li>
         </ul>
-   	 </aside>
+     </aside>
 		
 	 <main id= "conteudo_da_pagina">
 		<h1 id="inteligencia_artificial"><strong>Inteligência Artificial - INTRODUÇÃO</strong></h1> <br>
@@ -68,7 +103,7 @@ As sementes da IA moderna foram plantadas pelos filósofos clássicos que tentar
 		  <p>
 		  Eu sou Fernando Tavares, Minha dupla é Pedro Miguel de souza. Nós somos alunos da ETEC Fernando Prestes e fizemos esse trabalho em dupla
 		  
-		  <h2 id="Tijolo"> Fernando</h2><br>
+		  <h2 id="tijolo"> Fernando</h2><br>
 		  Fernando estuda na fatec, eis uma foto dele:
 		  
 		  <h2 id="paraphuso"> Pedro</h2><br>
@@ -82,6 +117,6 @@ As sementes da IA moderna foram plantadas pelos filósofos clássicos que tentar
     width: 200px;
     padding: 20px;
     background-color: #f4f4f4;
-	float: left
+	float: left;
 </style>
  </CSS>
