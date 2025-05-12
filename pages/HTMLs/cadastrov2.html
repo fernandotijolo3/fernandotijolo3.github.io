@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Objeto Encontrado</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/estilo.css"/>
+</head>
+
+<body> 
+
+	<!--Navbar-->
+	<ul class="estilo">
+			<li class="logo">
+			<a href="homev2.html"><button class="botao_home"> <img src="../imagensACP/logotipo-removebg-preview.png" class="logotipo"> </button></a><!--logotipo e botao de home-->
+			</li>
+			<li class="esquerda">
+			<a href="sobrenos.html" >Nós </a>
+			</li>
+			<li class="esquerda">
+			<a href="itensV2.html" >Itens Perdidos </a>
+			</li>
+			<a href="cadastrov2.html" ><button class="botao-cadastrar">Cadastrar Item</button></a>
+			
+
+	</ul>
+	
+		<!--conteúdo principal-->
+		<div class="texto_central02">
+			<h1>Cadastro de Objeto encontrado</h1>
+		</div>
+		
+					<!--informações do Item-->
+<form id="cadastroForm">
+	<div id="formulario-cadastro" class="formulario" style="display: block;">
+		<h2>Informações específicas do Item</h2>
+				<label>Nome do objeto:</label>
+				<input id="nomeObjetoEnc" type="text" placeholder="Nome do Objeto">
+				<label>Número:</label>
+				<input id="descObjetoEnc" placeholder="Número para contato"></input>
+				<label>Bairro encontrado:</label>
+				<input id="localObjetoEnc"type="text" placeholder="Local encontrado">
+				<label>Data:</label>
+				<input id="dataEnc"type="date">
+				 <!-- Campo para upload de imagem -->
+				 <label for="imagemObjetoEnc">Imagem do Item:</label>
+				 <input type="file" id="imagemObjetoEnc" accept="image/*">
+				 <button onclick="adicionarObjetoEncontrado()" id="submit" class="formulario">Salvar</button>
+				<p id="confirma"></p>
+				 
+	</div>
+</form>
+	<ul id="listaObjetos"></ul>
+	
+
+ <script>
+  function searchItems() {
+    const input = document.getElementById("searchinput").value.toLowerCase();
+    const cards = document.querySelectorAll(".card_itens");
+
+    cards.forEach(card => {
+      const itemName = card.getAttribute("data-name").toLowerCase();
+      const hashtags = card.getAttribute("data-hashtags").toLowerCase();
+
+      if (itemName.includes(input) || hashtags.includes(input)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+}
+document.getElementById("searchinput").addEventListener("input", searchItems);
+
+
+function filterItems(bairro) {
+const cards = document.querySelectorAll('.card_itens');
+cards.forEach(card => {
+const hashtags = card.getAttribute('data-hashtags');
+if (bairro === '' || hashtags.includes(bairro)) {
+  card.style.display = 'block';
+} else {
+  card.style.display = 'none';
+}
+});
+}
+function exibirObjetos() {
+const containerItens = document.querySelector(".container_itens");
+const objetosCadastrados = JSON.parse(localStorage.getItem("objetosEncontrados")) || [];
+
+objetosCadastrados.forEach(objeto => {
+  const card = document.createElement("div");
+  card.classList.add("card_itens");
+  card.innerHTML = `
+    <img src="${objeto.imagem || 'imagensACP../default.png'}" alt="${objeto.nome}">
+    <h3>${objeto.nome}</h3>
+    <p><strong>${objeto.local}</strong></p>
+    <div class="hashtags">
+      <span class="hashtag">${objeto.local}</span>
+      <span class="hashtag">${objeto.descricao}</span>
+      <span class="hashtag">${objeto.data}</span>
+    </div>
+  `;
+  containerItens.appendChild(card);
+});
+}
+
+window.onload = exibirObjetos;
+
+function adicionarObjetoEncontrado() {
+let confirma = "Achado adicionado com sucesso!";
+
+// Nome do objeto
+let nomeObjetoEnc = document.getElementById("nomeObjetoEnc");
+let objeto = nomeObjetoEnc.value;
+if (!objeto) return alert("Digite o nome do objeto.");
+
+// Local encontrado
+let localObjetoEnc = document.getElementById("localObjetoEnc");
+let local = localObjetoEnc.value;
+if (!local) return alert("Digite o local encontrado.");
+
+// Descrição
+let descObjetoEnc = document.getElementById("descObjetoEnc");
+let descricao = descObjetoEnc.value;
+if (!descricao) return alert("Digite a descrição do item.");
+
+// Data
+let dataEnc = document.getElementById("dataEnc");
+let data1 = dataEnc.value;
+if (!data1) return alert("Insira a data em que o item foi encontrado.");
+
+// Imagem (opcional)
+let imagemObjetoEnc = document.getElementById("imagemObjetoEnc");
+let imagem = imagemObjetoEnc.files[0];
+let imagemURL = "";
+
+if (imagem) {
+let reader = new FileReader();
+reader.onload = function(e) {
+    imagemURL = e.target.result;
+    salvarEExibirObjeto(objeto, descricao, local, data1, imagemURL);
+};
+reader.readAsDataURL(imagem);
+} else {
+salvarEExibirObjeto(objeto, descricao, local, data1, null);
+}
+
+function salvarEExibirObjeto(objeto, descricao, local, data1, imagemURL) {
+let objetosCadastrados = JSON.parse(localStorage.getItem("objetosEncontrados")) || [];
+
+let novoObjeto = {
+    nome: objeto,
+    descricao: descricao,
+    local: local,
+    data: data1,
+    imagem: imagemURL
+};
+
+objetosCadastrados.push(novoObjeto);
+localStorage.setItem("objetosEncontrados", JSON.stringify(objetosCadastrados));
+
+exibirObjetos();
+nomeObjetoEnc.value = "";
+localObjetoEnc.value = "";
+descObjetoEnc.value = "";
+dataEnc.value = "";
+imagemObjetoEnc.value = "";
+}
+}
+ </script>
+	
+</body>
+
+</html>

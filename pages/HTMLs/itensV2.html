@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achei!</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/estilo.css"/>
+
+	
+</head>
+
+<body>
+
+	<!--Navbar-->
+	<ul class="estilo">
+		<li class="logo">
+		<a href="homev2.html"><button class="botao_home"> <img src="../ImagensACP/logotipo-removebg-preview.png" class="logotipo"> </button></a>
+		</li>
+		<li class="esquerda">
+		<a href="sobrenos.html" >Nós </a>
+		<li class="esquerda">
+		<a href="itensV2.html" >Itens Perdidos</a>
+		</li>
+		<a href="cadastrov2.html" ><button class="botao-cadastrar">Cadastrar Item</button></a>
+	</ul>
+
+</li>
+    <div class="filters">
+        <button class="filter-btn" onclick="filterItems('VilaJardini')">#Vila Jardini</button>
+        <button class="filter-btn" onclick="filterItems('VilaCarvalo')">#Vila Carvalo</button>
+        <button class="filter-btn" onclick="filterItems('VilaSantana')">#Vila Santana</button>
+        <button class="filter-btn" onclick="filterItems('JardimIpiranga')">#Jardim Ipiranga</button>
+        <button class="filter-btn" onclick="filterItems('NovaEsperanca')">#Nova Esperança</button>
+        <button class="filter-btn" onclick="filterItems('JuliodeMesquita')">#Júlio de Mesquita</button>
+    <br> <br>
+        <button class="filter-btn" onclick="filterItems('Objetos')">#Objetos</button>
+        <button class="filter-btn" onclick="filterItems('Eletronicos')">#Eletronicos</button>
+        <button class="filter-btn" onclick="filterItems('Identidade')">#Identidade</button>
+        <button class="filter-btn" onclick="filterItems('Movel')">#Movel</button>
+        <button class="filter-btn" onclick="filterItems('Vestimento')">#Vestimento</button>
+        <br><br>
+        <button class="filter-btn" onclick="filterItems('')">Todos</button>
+      </div>
+	</div>
+
+	<div class="search">	
+		<label for="">
+			<span class="icone-de-pesquisa">
+			<img src="../ImagensACP/search.png" class="icone">
+			</span>
+		</label>
+		<input type="text" id="searchinput" placeholder="Pesquisar">
+	</div>
+
+	<div class="container_itens">
+
+	  <div class="card_itens" data-hashtags="VilaJardini, Objetos"  data-name="mochila preta">
+		<img src="../ImagensACP/mochila.jpeg" alt="Mochila Preta">
+		<h3>Mochila Preta</h3>
+		<p><strong>15-996162220</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Jardini</span>
+		  <span class="hashtag">#Objeto</span>
+		  <span class="hashtag">#05-05-2025</span>
+		</div>
+	  </div>
+
+    <div class="card_itens" data-hashtags="VilaCarvalo, Eletronicos" data-name="celular samsung">
+      <img src="../ImagensACP/celular.jpeg" alt="Celular Samsung">
+      <h3>Celular Samsung</h3>
+	  <p><strong>15-906442320</strong></p>
+      <div class="hashtags">
+        <span class="hashtag">#Vila Carvalo</span>
+        <span class="hashtag">#Eletronico</span>
+        <span class="hashtag">#24-03-2025</span>
+      </div>
+	</div>
+
+    <div class="card_itens" data-hashtags="VilaSanta, Objetos" data-name="carteira marrom">
+      <img src="../ImagensACP/carteira.jpeg" alt="Carteira Marrom">
+      <h3>Carteira Marrom</h3>
+	  <p><strong>15-988356631</strong></p>
+      <div class="hashtags">
+        <span class="hashtag">#Vila Santana</span>
+        <span class="hashtag">#Objeto</span>
+        <span class="hashtag">#01-02-2025</span>
+      </div>
+    </div>
+
+	<div class="card_itens" data-hashtags="JardimIpiranga, Identidade" data-name="passe de onibus">
+		<img src="../ImagensACP/passe.jpeg" alt="Passe De Onibus">
+		<h3>Passe de onibus</h3>
+		<p><strong>15-907357717</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Jardim Ipiranga</span>
+		  <span class="hashtag">#Identidade</span>
+		  <span class="hashtag">#23-02-2025</span>
+		</div>
+	  </div>
+      <div class="card_itens"  data-hashtags="VilaCarvalo, Movel" data-name="bicicleta">
+		<img src="../ImagensACP/bike.jpeg" alt="bicicleta">
+		<h3>bicicleta</h3>
+		<p><strong>15-997176624</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Carvalho</span>
+		  <span class="hashtag">#Movel</span>
+		  <span class="hashtag">#27-02-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="NovaEsperanca, Movel" data-name="bike">
+		<img src="../ImagensACP/skate.jpeg.jpg" alt="skate">
+		<h3>Skate</h3>
+		<p><strong>15-9117155540</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Nova Esperança</span>
+		  <span class="hashtag">#Movel</span>
+		  <span class="hashtag">#11-02-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="VilaJardini, Vestimento" data-name="bone">
+		<img src="../ImagensACP/boné.jpeg" alt="Boné">
+		<h3>Boné</h3>
+		<p><strong>15-9005465666</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Jardini</span>
+		  <span class="hashtag">#Vestimento</span>
+		  <span class="hashtag">#15-04-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="VilaSantana, Objetos" data-name="chave">
+		<img src="../ImagensACP/chave1.jpeg" alt="chave">
+		<h3>Chave</h3>
+		<p><strong>15-9003135330</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Santana</span>
+		  <span class="hashtag">#Objeto</span>
+		  <span class="hashtag">#08-01-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="JardimIpiranga, Identidade" data-name="rg">
+		<img src="../ImagensACP/rg.jpeg" alt="Rg">
+		<h3>Rg</h3>
+		<p><strong>15-960855528</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Jardim Ipiranga</span>
+		  <span class="hashtag">#identidade</span>
+		  <span class="hashtag">#15-04-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="VilaSantana, Eletronicos" data-name="iphone">
+		<img src="../ImagensACP/iphone.jpeg" alt="Celular">
+		<h3>Celular Iphone</h3>
+		<p><strong>15-996663340</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Santana</span>
+		  <span class="hashtag">#eletronico</span>
+		  <span class="hashtag">#25-02-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="NovaEsperanca, Movel" data-name="bike">
+		<img src="../ImagensACP/bike2.jpeg" alt="Bicleta">
+		<h3>Bike</h3>
+		<p><strong>15-9008653001</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Nova Esperança</span>
+		  <span class="hashtag">#Movel</span>
+		  <span class="hashtag">#04-05-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens"data-hashtags="VilaCarvalo, Objetos" data-name="chaves">
+		<img src="../ImagensACP/chave2.jpeg" alt="chave">
+		<h3>Chaves</h3>~
+		<p><strong>15-995563755</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Carvalho</span>
+		  <span class="hashtag">#Objeto</span>
+		  <span class="hashtag">#29-04-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens"data-hashtags="NovaEsperanca, Vestimento" data-name="blusa de frio gap">
+		<img src="../ImagensACP/blusa.jpeg" alt="blusa">
+		<h3>Blusa de frio Gap</h3>
+        <p><strong>15-981284885</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Nova Esperança</span>
+		  <span class="hashtag">#Objeto</span>
+		  <span class="hashtag">#27-01-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens"data-hashtags="VilaJardini, Eletronicos" data-name="celular xiomi">
+		<img src="../ImagensACP/xiomi.jpeg" alt="celular">
+		<h3>Celular xiomi</h3>
+		<p><strong>15-911130885</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Jardini</span>
+		  <span class="hashtag">#Eletronico</span>
+		  <span class="hashtag">#13-02-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="VilaSantana, Identidade" data-name="Rg">
+		<img src="../ImagensACP/rg2.jpeg" alt="rg">
+		<h3>Identidade</h3>
+		<p><strong>15-977012007</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Santana</span>
+		  <span class="hashtag">#Identidade</span>
+		  <span class="hashtag">#01-01-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="JardimIpiranga, Identidade" data-name="cnh">
+		<img src="../ImagensACP/cnh.jpeg" alt="Cnh">
+		<h3>CNH</h3>
+		<p><strong>15-915089917</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Jardim Ipiranga</span>
+		  <span class="hashtag">#Identidade</span>
+		  <span class="hashtag">#29-03-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="JuliodeMesquita, Vestimento"data-name="chapeu">
+		<img src="../ImagensACP/bone.jpeg" alt="Boné">
+		<h3>Chapéu</h3>
+		<p><strong>15-933184132</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Julio de Mesquita</span>
+		  <span class="hashtag">#Vestimento</span>
+		  <span class="hashtag">#9-04-2025</span>
+		</div>
+	  </div>
+	  <div class="card_itens" data-hashtags="VilaCarvalo, Identidade" data-name="clt">
+		<img src="../ImagensACP/clt.jpeg" alt="Clt">
+		<h3>CLT</h3>
+		<p><strong>15-910585015</strong></p>
+		<div class="hashtags">
+		  <span class="hashtag">#Vila Carvalho</span>
+		  <span class="hashtag">#Identidade</span>
+		  <span class="hashtag">#28-02-2025</span>
+		</div>
+	  </div>
+	</div>
+
+	<script>
+		function searchItems() {
+		    const input = document.getElementById("searchinput").value.toLowerCase();
+		    const cards = document.querySelectorAll(".card_itens");
+
+		    cards.forEach(card => {
+		      const itemName = card.getAttribute("data-name").toLowerCase();
+		      const hashtags = card.getAttribute("data-hashtags").toLowerCase();
+
+		      if (itemName.includes(input) || hashtags.includes(input)) {
+		        card.style.display = "block";
+		      } else {
+		        card.style.display = "none";
+		      }
+		    });
+		}
+		document.getElementById("searchinput").addEventListener("input", searchItems);
+
+
+  function filterItems(bairro) {
+      const cards = document.querySelectorAll('.card_itens');
+      cards.forEach(card => {
+        const hashtags = card.getAttribute('data-hashtags');
+        if (bairro === '' || hashtags.includes(bairro)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+	  function exibirObjetos() {
+		const containerItens = document.querySelector(".container_itens");
+		const objetosCadastrados = JSON.parse(localStorage.getItem("objetosEncontrados")) || [];
+
+		objetosCadastrados.forEach(objeto => {
+		  const card = document.createElement("div");
+		  card.classList.add("card_itens");
+		  card.innerHTML = `
+			<img src="${objeto.imagem || '../ImagensACP/default.png'}" alt="${objeto.nome}">
+			<h3>${objeto.nome}</h3>
+			<p><strong>${objeto.local}</strong></p>
+			<div class="hashtags">
+			  <span class="hashtag">${objeto.local}</span>
+			  <span class="hashtag">${objeto.descricao}</span>
+			  <span class="hashtag">${objeto.data}</span>
+			</div>
+		  `;
+		  containerItens.appendChild(card);
+		});
+	  }
+     
+	  window.onload = exibirObjetos;
+
+	  function adicionarObjetoEncontrado() {
+    let confirma = "Achado adicionado com sucesso!";
+  
+    // Nome do objeto
+    let nomeObjetoEnc = document.getElementById("nomeObjetoEnc");
+    let objeto = nomeObjetoEnc.value;
+    if (!objeto) return alert("Digite o nome do objeto.");
+  
+    // Local encontrado
+    let localObjetoEnc = document.getElementById("localObjetoEnc");
+    let local = localObjetoEnc.value;
+    if (!local) return alert("Digite o local encontrado.");
+  
+    // Descrição
+    let descObjetoEnc = document.getElementById("descObjetoEnc");
+    let descricao = descObjetoEnc.value;
+    if (!descricao) return alert("Digite a descrição do item.");
+  
+    // Data
+    let dataEnc = document.getElementById("dataEnc");
+    let data1 = dataEnc.value;
+    if (!data1) return alert("Insira a data em que o item foi encontrado.");
+  
+    // Imagem (opcional)
+    let imagemObjetoEnc = document.getElementById("imagemObjetoEnc");
+    let imagem = imagemObjetoEnc.files[0];
+    let imagemURL = "";
+    
+    if (imagem) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            imagemURL = e.target.result;
+            salvarEExibirObjeto(objeto, descricao, local, data1, imagemURL);
+        };
+        reader.readAsDataURL(imagem);
+    } else {
+        salvarEExibirObjeto(objeto, descricao, local, data1, null);
+    }
+
+    function salvarEExibirObjeto(objeto, descricao, local, data1, imagemURL) {
+        let objetosCadastrados = JSON.parse(localStorage.getItem("objetosEncontrados")) || [];
+        
+        let novoObjeto = {
+            nome: objeto,
+            descricao: descricao,
+            local: local,
+            data: data1,
+            imagem: imagemURL
+        };
+
+        objetosCadastrados.push(novoObjeto);
+        localStorage.setItem("objetosEncontrados", JSON.stringify(objetosCadastrados));
+
+        exibirObjetos();
+        nomeObjetoEnc.value = "";
+        localObjetoEnc.value = "";
+        descObjetoEnc.value = "";
+        dataEnc.value = "";
+        imagemObjetoEnc.value = "";
+    }
+}
+
+
+
+
+	 </script>
+</body>
+
+</html>
